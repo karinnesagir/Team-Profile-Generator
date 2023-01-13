@@ -1,17 +1,16 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+// const util = require("util");
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const generateHTML = require("./utils/generateHTML.js");
-const path = require('path');
-const OUTPUT_DIR = path.resolve(__dirname, 'output')
-const outputPath = path.join(OUTPUT_DIR, 'team.html');
+
 
 const teamMembers = [];
 
 
-const pomptManager = () => {
+const promptManager = () => {
   return inquirer.prompt([
     {
       type: 'input',
@@ -46,13 +45,47 @@ const pomptManager = () => {
     })
 };
 
-validate = () => {
-  if(validate == ""){
-    return "Please do not leave your answer blank."
+
+// const pomptManager = [
+//         {
+//           type: 'input',
+//           name: 'name',
+//           message: 'What is your name?',
+//           validate: validate,
+//         },
+//         {
+//           type: 'input',
+//           name: 'id',
+//           message: 'What is your id number?',
+//           validate: validate,
+    
+//         },
+//         {
+//           type: 'input',
+//           name: 'email',
+//           message: 'What is your email address?',
+//           validate: validate,
+//         },
+//         {
+//           type: 'input',
+//           name: 'officeNumber',
+//           message: 'What is your office number?',
+//           validate: validate,
+//         }
+// ]
+
+
+
+
+function validate (value) {
+  if (value) {
+      return true;
   } else {
-    return true;
+      return "Please do not leave the questions blank."
   }
-}
+};
+
+
 
 const promptBuildTeam = () => {
   return inquirer.prompt([
@@ -79,6 +112,7 @@ const promptBuildTeam = () => {
     }
   });
 };
+
 
 const promptEngineer = () => {
   return inquirer.prompt([
@@ -114,6 +148,7 @@ const promptEngineer = () => {
     promptBuildTeam();
   })
 };
+
 
 const promptIntern = () => {
   return inquirer.prompt([
@@ -152,10 +187,23 @@ const promptIntern = () => {
 
 
 const buildTeam = () => {
-  if (!fs.existsSync(OUTPUT_DIR)) {
-    fs.mkdirSync(OUTPUT_DIR)
-  }
-  fs.writeFileSync(outputPath, generateHTML(teamMembers), 'utf-8');
+  writeToFile("./output/index.html", generateHTML(teamMembers));
 };
 
-pomptManager();
+
+function writeToFile(fileName, response) {
+  fs.writeFile(fileName, response, function (err) {
+      if (err) {
+          return console.log(err);
+      }
+  })
+};
+
+
+// TODO: Create a function to initialize app
+function init() {
+  promptManager();
+};
+
+// Function call to initialize app
+init();

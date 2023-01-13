@@ -43,6 +43,8 @@ const addMembers = (team) => {
         html.push(internHTML);
     }
 
+    console.log(team);
+
     for (let i = 0; i < team.length; i++) {
         if (team[i].getTitle() === "Manager") {
             addManager(team[i]);
