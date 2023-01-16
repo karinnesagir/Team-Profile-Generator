@@ -1,21 +1,14 @@
 const Manager = require("../lib/Manager");
+const manager = new Manager('test', 123, 'test@email.com', 321);
 
-describe("Manager", () => {
-    describe("Initialization", () => {
-  
-      it("should get the constructor values for the Manager object", () => {
-  
-        const Manager = new Manager("Bob", 12345, "bob@gmail.com", 555)
-        expect(Manager.name).toEqual("Bob");
-        expect(Manager.id).toEqual(12345);
-        expect(Manager.email).toEqual("bob@gmail.com");
-        expect(Manager.officeNumber).toEqual(555);
-  
-      });
-  
-      it("should get the manager's id from the getOfficeNumber() method", () => {
-          expect(getOfficeNumber()).toBe("555");
-      });
-  
-    });
-  });
+test("Can set office number from constructor value", () => {
+  expect(manager.officeNumber).toBe(321);
+});
+
+test("Can get name from getOfficeNumber() function", () => {
+  expect(manager.getOfficeNumber()).toBe(321);
+});
+
+test("Can get job title from getTitle() function", () => {
+  expect(manager.getTitle()).toBe("Manager");
+});

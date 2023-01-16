@@ -1,28 +1,30 @@
 const Employee = require("../lib/Employee");
+const employee = new Employee('testName', 123, 'test@email.com');
 
-describe("Employee", () => {
-  describe("Initialization", () => {
+test("Can set name from constructor value", () => {
+  expect(employee.name).toBe('testName');
+});
 
-    it("should get the constructor values for the Employee object", () => {
+test("Can set id from constructor value", () => {
+  expect(employee.id).toBe(123);
+});
 
-      const Employee = new Employee("Bob", 12345, "bob@gmail.com", "bobgithub")
-      expect(Employee.name).toEqual("Bob");
-      expect(Employee.id).toEqual(12345);
-      expect(Employee.email).toEqual("bob@gmail.com");
+test("Can set email address from constructor value", () => {
+  expect(employee.email).toBe('test@email.com');
+});
 
-    });
+test("Can get name from getName() function", () => {
+  expect(employee.getName()).toBe("testName");
+});
 
-    it("should get the employee's name from the getName() method", () => {
-      expect(getName()).toBe("Bob");
-    });
+test("Can get id from getId() function", () => {
+  expect(employee.getId()).toBe(123);
+});
 
-    it("should get the employee's id from the getId() method", () => {
-        expect(getId()).toBe("12345");
-    });
+test("Can get email address from getEmail() function", () => {
+  expect(employee.getEmail()).toBe("test@email.com");
+});
 
-    it("should get the employee's name from the getEmail() method", () => {
-        expect(getEmail()).toBe("Bob");
-    });
-
-  });
+test("Can get job title from getTitle() function", () => {
+  expect(employee.getTitle()).toBe("Employee");
 });

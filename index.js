@@ -46,37 +46,6 @@ const promptManager = () => {
 };
 
 
-// const pomptManager = [
-//         {
-//           type: 'input',
-//           name: 'name',
-//           message: 'What is your name?',
-//           validate: validate,
-//         },
-//         {
-//           type: 'input',
-//           name: 'id',
-//           message: 'What is your id number?',
-//           validate: validate,
-    
-//         },
-//         {
-//           type: 'input',
-//           name: 'email',
-//           message: 'What is your email address?',
-//           validate: validate,
-//         },
-//         {
-//           type: 'input',
-//           name: 'officeNumber',
-//           message: 'What is your office number?',
-//           validate: validate,
-//         }
-// ]
-
-
-
-
 function validate (value) {
   if (value) {
       return true;
@@ -84,7 +53,6 @@ function validate (value) {
       return "Please do not leave the questions blank."
   }
 };
-
 
 
 const promptBuildTeam = () => {
@@ -199,11 +167,11 @@ function writeToFile(fileName, response) {
   })
 };
 
+promptManager();
+// Function to initialize app
+// function init() {
+//   promptManager();
+// };
 
-// TODO: Create a function to initialize app
-function init() {
-  promptManager();
-};
-
-// Function call to initialize app
-init();
+// // Function call to initialize app
+// init();

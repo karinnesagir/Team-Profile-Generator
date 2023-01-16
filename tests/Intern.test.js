@@ -1,21 +1,14 @@
 const Intern = require("../lib/Intern");
+const intern = new Intern('test', 123, 'test@email.com', 'schoolName');
 
-describe("Intern", () => {
-  describe("Initialization", () => {
+test("Can set school name from constructor value", () => {
+  expect(intern.school).toBe('schoolName');
+});
 
-    it("should get the constructor values for the Employee object", () => {
+test("Can get name from getSchool() function", () => {
+  expect(intern.getSchool()).toBe("schoolName");
+});
 
-      const Intern = new Intern("Bob", 12345, "bob@gmail.com", "bobgithub")
-      expect(Intern.name).toEqual("Bob");
-      expect(Intern.id).toEqual(12345);
-      expect(Intern.email).toEqual("bob@gmail.com");
-      expect(Intern.githubUsername).toEqual("bobgithub");
-
-    });
-
-    it("should get the employee's name from the getGithubUsername() method", () => {
-      expect(getGithubUsername()).toBe("bobgithub");
-    });
-
-  });
+test("Can get job title from getTitle() function", () => {
+  expect(intern.getTitle()).toBe("Intern");
 });
