@@ -1,6 +1,5 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-// const util = require("util");
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
@@ -168,10 +167,3 @@ function writeToFile(fileName, response) {
 };
 
 promptManager();
-// Function to initialize app
-// function init() {
-//   promptManager();
-// };
-
-// // Function call to initialize app
-// init();

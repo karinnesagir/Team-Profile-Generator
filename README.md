@@ -5,6 +5,8 @@ Object-Oriented Programming Challenge: Team Profile Generator
 
 This Node.js command-line application takes in information about employees on a software engineering team and generates an HTML webpage that displays summaries for each person.
 
+Here is a [Link](https://drive.google.com/file/d/1nZTGkR06_RMv5J2nhtRhYon9KpwqEFMJ/view) to a walkthrough video that demonstrates the functionality of the application.
+
 ### User Story
 
 ```
@@ -41,10 +43,8 @@ If your README is long, add a table of contents to make it easy for users to fin
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Credits](#credits)
 - [License](#license)
 - [Features](#Features)
-
 - [Tests](#Tests)
 
 ## Installation
@@ -55,23 +55,13 @@ The application can be invoked through the command line using the following comm
 node index.js
 ```
 
-## Usage **************
+## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
+Use the intergrated terminal to build a team and add as many members as needed.
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
+Example of prompt:
 
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
-
-## Credits
-
-List your collaborators, if any, with links to their GitHub profiles.
-
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
-
-If you followed tutorials, include links to those here as well.
+![Jest test](./assets/prompt.jpg)
 
 ## License
 
@@ -85,3 +75,9 @@ This project is licensed under the MIT license. For more information on the MIT 
 4. Inquirer
 5. Jest
 6. Object-Oriented Programming
+
+## Tests
+
+Jest testing:
+
+![Jest test](./assets/jestTest.jpg)
